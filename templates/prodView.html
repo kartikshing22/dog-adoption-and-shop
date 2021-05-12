@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %} {{product.name}} {% endblock title %}
+
+{% block body %}
+{% load static%}
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <img src="/media/{{product.image}}" width="20%" height="30%">
+            </div>
+
+
+        </div>
+
+        <div class="col-md-8">
+            <h4>{{product.name}} The {{product.category}}</h4>
+            <h6><img src="/static/icons/phone.png">{{product.phone_number}}</h6>
+            <h6><img src="/static/icons/address.png">{{product.address}} <b>{{product.city}}</b></h6>
+            <h6><img src="/static/icons/age.png"> {{product.age}} Years</h6>
+            <!--    <p><b>Rs.{{product.price}} </b></p>   -->
+            <p>{{product.desc}}</p>
+
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+{% endblock body %}
