@@ -47,10 +47,10 @@ class ProductCreateView(CreateView):
 def index(request):
 
     allProds = []
-    catprods = Dog.objects.values('category','id')
-    cats = {item['category'] for item in catprods}
+    catprods = Dog.objects.values('category','id') #for product categories
+    cats = {item['category'] for item in catprods} #categories
     for cat in cats:
-        prod = Dog.objects.filter(category=cat)
+        prod = Dog.objects.filter(category=cat) 
         n = len(prod)
         nSlides = n
         allProds.append([prod, range(1, n), n])   
